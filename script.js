@@ -9,8 +9,17 @@ function convertToRoman(num) {
       6:['I', 1]
     };
 
-  //your code here
-
+let roman = "";
+  let i = 0;
+  while (num > 0) {
+    let div = Math.floor(num / obj[i][1]);
+    num = num % obj[i][1];
+    while (div--) {
+      roman += obj[i][0];
+    }
+    i++;
+  }
+  return roman;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
